@@ -1,0 +1,39 @@
+
+
+
+@media screen and (max-width: 768px) {
+
+
+.quicklink{
+  width:100%;
+  background-color: #000;
+}
+.locatorform{
+  width: 100%;
+}
+.cityname{
+  width: 100%;
+}
+.latitude{
+  width:100%;
+}
+.longitude{
+  width: 100%;
+}
+
+
+}
+@media screen and (max-width: 600px) {
+
+
+.quicklink{
+  width:100%;
+}
+.locatorform{
+  width: 100%;
+}
+
+
+
+
+}
