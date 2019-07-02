@@ -34,11 +34,14 @@ margin-top: 10px;
 <script>
 $(document).ready(function(){
 
-  
-$("#cityname").blur(function(){
-  document.getElementById('autosuggest').innerHTML = "";
-  
-})
+  $("#latitude").focus(function(){
+    document.getElementById('autosuggest').innerHTML=""
+  })
+
+  $("#longitude").focus(function(){
+    document.getElementById('autosuggest').innerHTML=""
+  })
+
 
 function mysuggession(finder){
    $.ajax({
@@ -73,7 +76,7 @@ function mysuggession(finder){
                   //alert(document.getElementById('divautosuggest').innerHTML)
 
                   $real = $(this).html();
-                  alert('Realest'+$real)
+                  //alert('Realest'+$real)
                   $('#cityname').val($real);
                   $('#autosuggest').removeClass('suggess');
                   document.getElementById('autosuggest').innerHTML=""
