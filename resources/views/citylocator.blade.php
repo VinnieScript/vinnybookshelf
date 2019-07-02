@@ -171,7 +171,7 @@ $("#search").click(function(){
         $('#pagebtn').remove();
         document.getElementById('pager').innerHTML=""
         document.getElementById('result').innerHTML = data.length+"results"
-        
+        console.log('cityName',data)
         for(var i=1;i<data.length;i++){
           $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
         }
@@ -189,7 +189,7 @@ $("#search").click(function(){
         $('#result').addClass('resultClass');
         if($btnnumber == 1){
           for(var i=0;i<10;i++){
-          $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>'+i+'City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
+          $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
         }
         }
         else{
