@@ -35,13 +35,13 @@ margin-top: 10px;
 $(document).ready(function(){
 
   
-
+$("#cityname").blur(function(){
+  document.getElementById('autosuggest').innerHTML = "";
   
-  $("#cityname").keypress(function(){
-    var finder = document.getElementById('cityname').value
-    //console.log($.trim(finder).length);
-    if($.trim(finder).length > 1){
-       $.ajax({
+})
+
+function mysuggession(finder){
+   $.ajax({
                   url:'/suggestcity',
                   type:'post',
                   headers: {'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')},
@@ -55,8 +55,9 @@ $(document).ready(function(){
                   },
                   success:function(data){
                     //console.log(data)
-                    
-                    document.getElementById('autosuggest').innerHTML=""
+                    if($("#cityname").is(":focus")){
+                           
+                       document.getElementById('autosuggest').innerHTML=""
                     $.each(data, function(index) {
             
             $('#autosuggest').append('<div class="divautosuggest" style="height:30px;cursor:pointer">'+data[index].cityName+'</div>')
@@ -68,14 +69,24 @@ $(document).ready(function(){
                     $('#autosuggest').addClass('suggess');
 
 
-                    $(".divautosuggest").click(function(){
+                    $(".divautosuggest").on('click',function(){
                   //alert(document.getElementById('divautosuggest').innerHTML)
+
                   $real = $(this).html();
-                  //alert($real)
+                  alert('Realest'+$real)
                   $('#cityname').val($real);
                   $('#autosuggest').removeClass('suggess');
                   document.getElementById('autosuggest').innerHTML=""
                 })
+
+                      }
+                      else{
+                        document.getElementById('autosuggest').innerHTML=""
+
+                      }
+                   
+                    //$('#cityname').bind('keypress');
+
 
                   },
                   error:function(obj, status, e){
@@ -83,8 +94,19 @@ $(document).ready(function(){
                     console.log(e);
                   }
                 })
+}
+  
+  $("#cityname").keypress(function(){
+    var finder = document.getElementById('cityname').value
+    //console.log($.trim(finder).length);
+    if($.trim(finder).length > 1){
+    
+      mysuggession(finder);
+      
+      
     }
   })
+
 
 $('#cityname').keyup(function(e){
   //console.log('keyup')
@@ -92,50 +114,7 @@ $('#cityname').keyup(function(e){
     var finder = document.getElementById('cityname').value
     //console.log($.trim(finder).length);
     if($.trim(finder).length > 1){
-       $.ajax({
-                  url:'/suggestcity',
-                  type:'post',
-                  headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
-                 beforeSend:function(){
-                  document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("https://majorcityfinder.herokuapp.com/images/loading.gif")}}" width="50px" />'
-                  
-                    },
-                  data:{
-                    city:finder
-                  },
-                  success:function(data){
-                    
-                    document.getElementById('autosuggest').innerHTML=""
-                      $.each(data, function(index) {
-            
-            $('#autosuggest').append('<div class="divautosuggest" style="height:30px;cursor:pointer">'+data[index].cityName+'</div>')
-             
-
-            
-                  });
-
-                    $('#autosuggest').addClass('suggess');
-
-
-
-
-                    $(".divautosuggest").click(function(){
-                  //alert(document.getElementById('divautosuggest').innerHTML)
-                  $real = $(this).html();
-                  //alert($real)
-                  $('#cityname').val($real);
-                  $('#autosuggest').removeClass('suggess');
-                  document.getElementById('autosuggest').innerHTML=""
-                })
-
-
-
-                  },
-                  error:function(obj, status, e){
-                    //alert(e);
-                    console.log(e);
-                  }
-                })
+      mysuggession(finder);  
     }
 
 })  
@@ -176,7 +155,7 @@ $("#search").click(function(){
         }
       }
 
-      for(var i=1;i<data.length;i++){
+      for(var i=1;i<11;i++){
           $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
         }
 
