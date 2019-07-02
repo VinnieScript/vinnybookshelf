@@ -44,7 +44,8 @@ $(document).ready(function(){
        $.ajax({
                   url:'/suggestcity',
                   type:'post',
-                  headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
+                  headers: {'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')},
+                 // headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
                  beforeSend:function(){
                   document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("https://majorcityfinder.herokuapp.com/images/loading.gif")}}" width="50px" />'
                   
