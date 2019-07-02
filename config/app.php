@@ -119,9 +119,9 @@ return [
     |
     */
 
-    'key' => 'base64:aTPnl99qSgNpByGlqRstujwbj6N6j2DyWe3ar0ZVqtc='
+    'key' => base64:aTPnl99qSgNpByGlqRstujwbj6N6j2DyWe3ar0ZVqtc=,
 
-    'cipher' => 'AES-256-CBC',
+    'cipher' => AES-256-CBC',
 
     /*
     |--------------------------------------------------------------------------
