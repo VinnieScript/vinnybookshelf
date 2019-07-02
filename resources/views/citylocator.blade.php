@@ -166,7 +166,15 @@ $("#search").click(function(){
         $("#pager").append('<div id="pagebtn" style="float:left;width:30px;height:30px;border:2px #solid #000;background-color:#fff;color:#000;margin-left:5px;cursor:pointer" class="Dpager" align="center" ><input type="hidden" value="'+parseInt(i)*9 +'" id="'+parseInt(i+1)+'"/>'+parseInt(i+1) +'</div>')
         }
       }
-      
+      else{
+        $('#Dpager').removeClass('pagerClass');
+        $('#pagebtn').remove();
+        document.getElementById('pager').innerHTML=""
+        document.getElementById('result').innerHTML = data.length+"results"
+        for(var i=1;i<data.length;i++){
+          $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
+        }
+      }
 
       for(var i=1;i<data.length;i++){
           $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
