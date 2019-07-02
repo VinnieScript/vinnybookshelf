@@ -4,10 +4,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=1024">
-        <link rel="icon" href="{!!asset('public/images/expert.png')!!}"/>
+        <link rel="icon" href="{!!asset('images/expert.png')!!}"/>
         <title>Expert System Analyst</title>
-        <script src="{{asset('public/newjs/jquery-3.3.1.min.js')}}"></script>
-        <link rel="stylesheet" type="text/css" href="{{asset('public/css/styles.css')}}">
+        <script src="{{asset('newjs/jquery-3.3.1.min.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <style type="text/css">
@@ -46,7 +46,7 @@ $(document).ready(function(){
                   type:'post',
                   headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
                  beforeSend:function(){
-                  document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("public/images/loading.gif")}}" width="50px" />'
+                  document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("images/loading.gif")}}" width="50px" />'
                   
                     },
                   data:{
@@ -96,7 +96,7 @@ $('#cityname').keyup(function(e){
                   type:'post',
                   headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
                  beforeSend:function(){
-                  document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("public/images/loading.gif")}}" width="50px" />'
+                  document.getElementById('autosuggest').innerHTML = 'Please Wait <img src="{{asset("images/loading.gif")}}" width="50px" />'
                   
                     },
                   data:{
@@ -151,7 +151,7 @@ $("#search").click(function(){
       headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
       url:'/suggession/'+city+'&'+latitude+'&'+longitude,
       beforeSend:function(){
-                  document.getElementById('result').innerHTML = '<span style="font-weight:bold;font-family:candara">Fetching Result</span><img src="{{asset("public/images/loading.gif")}}" width="50px" />'
+                  document.getElementById('result').innerHTML = '<span style="font-weight:bold;font-family:candara">Fetching Result</span><img src="{{asset("images/loading.gif")}}" width="50px" />'
                   '/suggession?q='+city+'&Lat='+latitude+'&Long='+longitude
                     },
       success:function(data){
@@ -232,7 +232,7 @@ $("#search").click(function(){
 <hr style=" border:2px solid #ff4500" />
 <table style="width: 100%">
   <tr>
-    <td style="width: 20%" align="right"><img src="{{asset('public/images/newlocator.png')}}" style="margin-left: 10px" width="100px" height="100px" /></td>
+    <td style="width: 20%" align="right"><img src="{{asset('images/newlocator.png')}}" style="margin-left: 10px" width="100px" height="100px" /></td>
     <td>
 
       <div style="float: right;width: 90%;background-color: #fff;margin-top: 80px;" align="center">
@@ -246,7 +246,7 @@ $("#search").click(function(){
 
 </div>
 <div id="banner" align="center">
-  <img src="{{asset('public/images/banner_city.gif')}}" style="margin-top: 10px" />
+  <img src="{{asset('images/banner_city.gif')}}" style="margin-top: 10px" />
 
 </div>
 <div id="body" style="width: 80%">
