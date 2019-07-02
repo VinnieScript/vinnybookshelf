@@ -4,9 +4,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=1024">
-        <link rel="icon" href="{!!asset('images/expert.png')!!}"/>
+        <link rel="icon" href="{!!asset('https://majorcityfinder.herokuapp.com/images/expert.png')!!}"/>
         <title>Expert System Analyst</title>
-        <script src="{{asset('newjs/jquery-3.3.1.min.js')}}"></script>
+        <script src="{{asset('https://majorcityfinder.herokuapp.com/newjs/jquery-3.3.1.min.js')}}"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <script>
@@ -481,7 +481,7 @@ if(nokiapecentage >= 80){
 </div>
 
 <div style="position: relative;z-index: 1; width:100%" align="center">
-<img src="{{URL::asset('/images/banner.gif')}}" height="200px" width="100%">
+<img src="{{URL::asset('https://majorcityfinder.herokuapp.com/images/banner.gif')}}" height="200px" width="100%">
 </div>
 </div>
 
