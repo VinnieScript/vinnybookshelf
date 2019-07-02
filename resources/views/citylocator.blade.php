@@ -172,7 +172,7 @@ $("#search").click(function(){
         document.getElementById('pager').innerHTML=""
         document.getElementById('result').innerHTML = data.length+"results"
         
-        for(var i=0;i<data.length;i++){
+        for(var i=1;i<data.length;i++){
           $("#result").append('<div id="covering" style="font-family:candara;width:100%;background-color:#fff;margin-bottom:10px"><table><tr><td>City Name:</td><td>'+ data[i].cityName +'('+data[i].countryID+')</td></tr><tr><td>Latitude:</td><td>'+data[i].latitude+'</td></tr><tr><td>Longitude:</td><td>'+data[i].longitude+'</td></tr></table></div>')
         }
       }
