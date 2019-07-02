@@ -73,6 +73,6 @@ class maincontroller extends Controller
     }
 
     public function test(Request $r){
-    	return response('Welcome to City Locator App');
+    	return response('Welcome to City Locator App'.$r->city);
     }
 }

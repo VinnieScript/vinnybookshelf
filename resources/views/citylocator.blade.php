@@ -42,7 +42,7 @@ $(document).ready(function(){
     //console.log($.trim(finder).length);
     if($.trim(finder).length > 1){
        $.ajax({
-                  url:'/suggestcity',
+                  url:'/test',
                   type:'post',
                   headers: {'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')},
                  // headers: { 'X-CSRF-TOKEN': $('input[name=_token]').val() },
