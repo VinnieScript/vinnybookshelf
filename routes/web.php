@@ -21,5 +21,6 @@ Route::post('/monthlyEvaluation', 'maincontroller@monthlyEvaluation');
 Route::post('/overall', 'maincontroller@overall');
 Route::post('/suggestcity', 'maincontroller@suggestcity');
 Route::get('/suggession/{city}&{latitude}&{longitude}', 'maincontroller@getcity');
+Route::post('/test', 'maincontroller@test');
 
 

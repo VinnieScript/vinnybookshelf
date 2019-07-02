@@ -54,7 +54,8 @@ $(document).ready(function(){
                     city:finder
                   },
                   success:function(data){
-                    //console.log(data)
+                    console.log(data)
+                    /*
                     document.getElementById('autosuggest').innerHTML=""
                     $.each(data, function(index) {
             
@@ -67,8 +68,6 @@ $(document).ready(function(){
                     $('#autosuggest').addClass('suggess');
 
 
-
-
                     $(".divautosuggest").click(function(){
                   //alert(document.getElementById('divautosuggest').innerHTML)
                   $real = $(this).html();
@@ -77,6 +76,7 @@ $(document).ready(function(){
                   $('#autosuggest').removeClass('suggess');
                   document.getElementById('autosuggest').innerHTML=""
                 })
+*/
                   },
                   error:function(obj, status, e){
                     //alert(e);

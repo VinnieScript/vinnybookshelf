@@ -71,4 +71,8 @@ class maincontroller extends Controller
     	
     	return response($latitude);
     }
+
+    public function test(Request $r){
+    	return response('Welcome to City Locator App')
+    }
 }
