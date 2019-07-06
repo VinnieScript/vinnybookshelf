@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Data extends Migration
+class Books extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,12 @@ class Data extends Migration
     public function up()
     {
         //
-        Schema::create('data', function (Blueprint $table) {
+
+         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('samsung');
-            $table->string('iphone');
-            $table->string('itel');
-            $table->string('nokia');
-            $table->string('techno');
-            $table->string('month');
+            $table->string('bookname');
+            $table->string('rating');
+            $table->string('imagepath');
             $table->timestamps();
              });
     }
@@ -33,7 +31,7 @@ class Data extends Migration
      */
     public function down()
     {
-        
-        Schema::dropIfExists('data');
+        //
+        Schema::dropIfExists('books');
     }
 }
