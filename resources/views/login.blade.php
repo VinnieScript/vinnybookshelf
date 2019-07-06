@@ -35,6 +35,10 @@ a:hover{
 <script>
 $(document).ready(function(){
 
+  $("#register").click(function(){
+ window.location='/register'
+})
+
 $("#login").click(function(){
 
 var username = document.getElementById('username').value;
@@ -81,7 +85,7 @@ if(username!="" && password!=""){
       <div id="content">
         <div id="content-left">
           <table >
-            <tr><td>My Account</td><td>WishList</td><td>Login</td><td>Register</td></tr></table>
+            <tr><td>My Account</td><td>WishList</td><td id="login" style="cursor: pointer">Login</td><td id="register" style="cursor: pointer">Register</td></tr></table>
         </div>
         
         <div id="content-right">Language<select><option>English</option><option>French</option></select></div>
@@ -118,7 +122,7 @@ if(username!="" && password!=""){
       <input type="password" id="password" placeholder="Password" style="width: 300px;height: 40px;margin-bottom: 20px"><br/> 
       <span style="font-weight: bold">forget password?</span><br/>
       <button style="width: 100px;height: 40px" id="login">Login</button><br/>
-      <span><u>Register</u></span><br/>
+      <span id="register"><u>Register</u></span><br/>
       <div id="result"></div>
       </div>
 

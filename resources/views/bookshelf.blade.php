@@ -57,6 +57,11 @@ else if(click==0){
 $("#login").click(function(){
  window.location='/login'
 })
+
+$("#register").click(function(){
+ window.location='/register'
+})
+
   function addItem(){
 
     $(".mymenu").addClass('mynewmenu');
@@ -91,14 +96,14 @@ document.getElementById('mainbodyII').innerHTML="";
               }
               $("#mainbodyII").append('<div><h2>BookShelf</h2></div>')
               for(var i=0; i<10;i++){
-                $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
+                $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px;cursor:pointer"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
               }
               
 
             }
             else{
               for(var i=0; i<data.length;i++){
-                $('#mainbodyII').append('<div class="books" style="margin:30px"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130;height:180"/></div>')
+                $('#mainbodyII').append('<div class="books" style="margin:30px"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130;height:180;cursor:pointer"/></div>')
               }
               
 
@@ -116,7 +121,7 @@ document.getElementById('mainbodyII').innerHTML="";
             document.getElementById('mainbodyII').innerHTML="";
             $("#mainbodyII").append('<div><h2>BookShelf</h2></div>')
             for(var i=0; i<10;i++){
-                $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
+                $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px;cursor:pointer"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
               }
           }
           else{
@@ -124,7 +129,7 @@ document.getElementById('mainbodyII').innerHTML="";
             document.getElementById('mainbodyII').innerHTML="";
             $("#mainbodyII").append('<div><h2>BookShelf</h2></div>')
             for(var i= parseInt($x)+parseInt($increment)-1;i<20;i++){
-              $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
+              $('#mainbodyII').append('<div class="books" style="float:left;margin:10px;"><input type="hidden" value="'+data[i].bookname+'"/><img src="https://ademilola.s3.amazonaws.com/'+ data[i].imagepath+'" style="width:130px;height:180px;cursor:pointer"/><br/>Rating:<br/>'+star_rating(data[i].rating)+'</div>')
             }
           }
 
@@ -181,7 +186,7 @@ document.getElementById('mainbodyII').innerHTML="";
       <div id="content">
         <div id="content-left">
           <table >
-            <tr><td>My Account</td><td>WishList</td><td id="login" style="cursor: pointer">Login</td><td>Register</td></tr></table>
+            <tr><td>My Account</td><td>WishList</td><td id="login" style="cursor: pointer">Login</td><td id="register" style="cursor: pointer">Register</td></tr></table>
         </div>
         
         <div id="content-right">Language<select><option>English</option><option>French</option></select></div>
