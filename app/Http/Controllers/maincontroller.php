@@ -235,18 +235,34 @@ class maincontroller extends Controller
         public function register(Request $r){
 
             $member= new authoriser();
-            $member->username = $r->username;
+
+            $find = $member::where('email','=',$r->email)->get();
+            if(count($find)){
+                    return response('Email Address has already been used');
+            }
+            else{
+                $member->username = $r->username;
             $member->password= $r->password;
             $member->email = $r->email;
             $member->save();
 
             return response('Registered');
 
+            }
+            
+
         }
 
         public function registerpage(){
 
             return view('register');
+        }
+
+        public function logout(Request $request){
+
+            $request->session()->flush();
+
+            return response('Session Destroyed');
         }
     
 

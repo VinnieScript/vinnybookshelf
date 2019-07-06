@@ -68,6 +68,10 @@ if(cpassword== password){
         document.getElementById('cpassword').value=""
        document.getElementById('result').innerHTML= "<span style='color:#000;font-family:candara'>Registration was Successful kindly click <a href='/login'>Here</a> to login</span>";
       }
+      else{
+        document.getElementById('result').innerHTML=""
+        document.getElementById('result').innerHTML=data;
+      }
     },
     error:function(obj,status,e){
       console.log(e);

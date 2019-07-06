@@ -36,4 +36,5 @@ Route::get('/vinnybookshelf/admin/editbook/{bookname}','maincontroller@editdetai
 Route::post('/updateBook','maincontroller@updatebook');
 Route::post('/deleteBook','maincontroller@deleteBook');
 Route::post('/register', 'maincontroller@register');
+Route::post('/logout', 'maincontroller@logout');
 

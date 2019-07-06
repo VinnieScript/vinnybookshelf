@@ -35,6 +35,35 @@ a:hover{
 <script>
 $(document).ready(function(){
 
+  $("#logout").click(function(){
+
+    $.ajax({
+          url:'/logout',
+          type:'post',
+          headers: {'X-CSRF-TOKEN': $('meta[name=csrf-token]').attr('content')},
+          beforeSend:function(){
+            document.getElementById('result').innerHTML="Please wait.."
+          },
+          
+          data:{logout:'logout'},
+          success:function(data){
+            //document.getElementById('result').innerHTML=data
+            if(data=="Session Destroyed"){
+
+              window.location='/login';
+
+            }
+
+          },
+          error:function(obj, status, e){
+            console.log(e)
+          }
+
+
+
+ })
+  })
+
 $("#upload").click(function(){
  var bookname = document.getElementById('bookname').value;
  var bookrate = document.getElementById('bookrate').value;
@@ -226,6 +255,7 @@ $("#view").click(function(){
           <div style="width: 100%; height:20px;background-color: #500000">Menu</div>
           <div id="create">Create/Upload Book</div>
           <div id="view" style="cursor: pointer;">View Uploaded</div>
+          <div id="logout" style="cursor: pointer">Logout</div>
 
 
         </div>

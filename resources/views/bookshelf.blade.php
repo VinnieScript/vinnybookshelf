@@ -59,7 +59,7 @@ $("#login").click(function(){
 })
 
 $("#register").click(function(){
- window.location='/register'
+ window.location='/registerpage'
 })
 
   function addItem(){
@@ -196,7 +196,7 @@ document.getElementById('mainbodyII').innerHTML="";
     </div>
     <div id="logoArea" align="center">
     <div id="logo">
-    <div id="logo-left"><img src="{{asset('https://vinnybookshelf.herokuapp.com/images/booklogo.png')}}" id="booklogo"/><img src="{{asset('https://vinnybookshelf.herokuapp.com/images/menu.png')}}" id="menu"/>
+    <div id="logo-left"><img src="{{asset('https://vinnybookshelf.herokuapp.com/images/booklogo.png')}}" id="booklogo"/><a href="/vinnybookshelf"><img src="{{asset('https://vinnybookshelf.herokuapp.com/images/menu.png')}}" id="menu"/></a>
 
     </div>
     <div class="mymenu"></div>
